@@ -92,7 +92,7 @@ fun DefaultListAppBar(
     TopAppBar(
         title = {
             Text(
-                text = "Tasks",
+                text = stringResource(id = R.string.list_screen_title),
                 color = androidx.wear.compose.material.MaterialTheme.colors.topAppBarContentColor
             )
         },
@@ -221,7 +221,7 @@ fun SearchAppBar(
             placeholder = {
                 Text(
                     modifier = Modifier.alpha(ContentAlpha.medium),
-                    text = "Search",
+                    text = stringResource(id = R.string.search_placeholder),
                     color = Color.White
                 )
             },
