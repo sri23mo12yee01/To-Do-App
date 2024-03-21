@@ -14,7 +14,7 @@ import com.example.to_docompose.R
 import com.example.to_docompose.ui.viewmodels.SharedViewModel
 import com.example.to_docompose.util.SearchAppBarState
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+
 @Composable
 fun ListScreen(
     navigateToTaskScreen: (taskId: Int) -> Unit,
@@ -33,7 +33,7 @@ fun ListScreen(
                      searchTextState = searchTextState
                  )
         },
-        content = { },
+        content = {},
         floatingActionButton = {
             ListFab(onFabClicked = navigateToTaskScreen)
         }
