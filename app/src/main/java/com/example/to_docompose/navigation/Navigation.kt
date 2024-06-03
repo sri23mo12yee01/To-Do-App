@@ -13,12 +13,13 @@ import com.example.to_docompose.util.Constants.LIST_SCREEN
 fun SetupNavigation(
     navController: NavHostController,
     sharedViewModel: SharedViewModel
-){
+) {
     val screen = remember(navController) {
-        Screens( navController = navController)
+        Screens(navController = navController)
     }
 
-    NavHost(navController = navController,
+    NavHost(
+        navController = navController,
         startDestination = LIST_SCREEN
     ) {
         listComposable(
@@ -26,7 +27,8 @@ fun SetupNavigation(
             sharedViewModel = sharedViewModel
         )
         taskComposable(
-            navigateToListScreen = screen.list
+            navigateToListScreen = screen.list,
+            sharedViewModel = sharedViewModel
         )
     }
 }

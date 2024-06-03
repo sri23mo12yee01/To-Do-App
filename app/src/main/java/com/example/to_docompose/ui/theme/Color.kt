@@ -5,13 +5,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.wear.compose.material.Colors
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
-
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+val Purple200 = Color(0xFFBB86FC)
+val Purple500 = Color(0xFF6200EE)
+val Purple700 = Color(0xFF3700B3)
+val Teal200 = Color(0xFF03DAC5)
 
 val LightGray = Color(0xFFFCFCFC)
 val MediumGray = Color(0xFF9C9C9C)
@@ -19,22 +16,29 @@ val DarkGray = Color(0xFF141414)
 
 val LowPriorityColor = Color(0xFF00C980)
 val MediumPriorityColor = Color(0xFFFFC114)
-val HighPriorityColor= Color(0xFFFF4646)
-val NonePriorityColor = Color(0xFFFFFFFF)
+val HighPriorityColor = Color(0XFFFF4646)
+val NonePriorityColor = MediumGray
 
-val Colors.topAppBarContentColor: Color
-@Composable
-get() = if(isSystemInDarkTheme()) MediumGray  else DarkGray
-
-val Colors.topAppBarBackgroundColor: Color
+val Colors.splashScreenBackground: Color
     @Composable
-    get() = if(isSystemInDarkTheme()) Color.Black else Pink80
-
-val Colors.taskItemBackgroundColor: Color
-    @Composable
-    get() = if(isSystemInDarkTheme()) DarkGray else Color.White
+    get() = if (isSystemInDarkTheme()) Color.Black else Purple700
 
 val Colors.taskItemTextColor: Color
     @Composable
-    get() = if(isSystemInDarkTheme()) LightGray else DarkGray
+    get() = if (isSystemInDarkTheme()) LightGray else DarkGray
 
+val Colors.taskItemBackgroundColor: Color
+    @Composable
+    get() = if (isSystemInDarkTheme())  DarkGray else Color.White
+
+val Colors.fabBackgroundColor: Color
+    @Composable
+    get() = if (isSystemInDarkTheme())  Purple700 else Teal200
+
+val Colors.topAppBarContentColor: Color
+    @Composable
+    get() = if (isSystemInDarkTheme())  LightGray else Color.White
+
+val Colors.topAppBarBackgroundColor: Color
+    @Composable
+    get() = if (isSystemInDarkTheme())  Color.Black else Purple500

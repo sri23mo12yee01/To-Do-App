@@ -13,27 +13,27 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.to_docompose.data.models.Priority
 import com.example.to_docompose.ui.theme.LARGE_PADDING
 import com.example.to_docompose.ui.theme.PRIORITY_INDICATOR_SIZE
+import com.example.to_docompose.ui.theme.Typography
 
 @Composable
-fun PriorityItem(
-    priority: Priority
-){
-    Row(verticalAlignment = Alignment.CenterVertically){
+fun PriorityItem(priority: Priority) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically
+    ) {
         Canvas(modifier = Modifier.size(PRIORITY_INDICATOR_SIZE)) {
             drawCircle(color = priority.color)
-            
         }
-        
         Text(
-            modifier = Modifier.padding(start= LARGE_PADDING),
+            modifier = Modifier.padding(start = LARGE_PADDING),
             text = priority.name,
-            color = MaterialTheme.colorScheme.onSurface)
-        
+            style = Typography.body1,
+            color = MaterialTheme.colorScheme.onSurface
+        )
     }
 }
 
 @Composable
 @Preview
-fun PriorityItemPreview(){
+fun PriorityItemPreview() {
     PriorityItem(priority = Priority.HIGH)
 }

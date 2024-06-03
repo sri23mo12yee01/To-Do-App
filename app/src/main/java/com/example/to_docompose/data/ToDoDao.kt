@@ -1,16 +1,12 @@
 package com.example.to_docompose.data
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.example.to_docompose.data.models.ToDoTask
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ToDoDao {
+
     @Query("SELECT * FROM todo_table ORDER BY id ASC")
     fun getAllTasks(): Flow<List<ToDoTask>>
 
